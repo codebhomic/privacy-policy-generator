@@ -39,11 +39,6 @@
               
        <?php
       if(isset($_POST['submit'])){
-       function get_safe_value($str){
-            htmlspecialchars($str);
-            strip_tags($str);
-            return $str;
-       }
        $siteName = strip_tags(htmlspecialchars($_POST['sitename']));
        $siteEmail = strip_tags(htmlspecialchars($_POST['emailaddress']));
        $siteurl = strip_tags(htmlspecialchars($_POST['siteurl']));
