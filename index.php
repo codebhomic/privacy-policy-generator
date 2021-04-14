@@ -11,7 +11,9 @@
       <title>Privacy Policy Generator</title>
    </head>
    <body>
-   
+   <?php 
+      // This is Navbar.
+    ?>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
          <div class="container-fluid">
             <a class="navbar-brand" href="/index.php">Privacy Policy Generator</a>
@@ -38,13 +40,19 @@
             <div class="col-lg-8 col-md-10 mx-auto">
               
        <?php
-      if(isset($_POST['submit'])){
+      
+       // Checking the the values submitted or not
+               
+       if(isset($_POST['submit'])){
+          // getting the values and securing the values
        $siteName = strip_tags(htmlspecialchars($_POST['sitename']));
        $siteEmail = strip_tags(htmlspecialchars($_POST['emailaddress']));
        $siteurl = strip_tags(htmlspecialchars($_POST['siteurl']));
        $fullname = strip_tags(htmlspecialchars($_POST['fullname']));
-       include 'policy.php';
+       //when data is get then include policy.php and showing the privacy policy in textarea
+          include 'policy.php';
        }else{
+          //if submit is not isset then asking to submit the form
        ?>
                <form action="/" method="post" accept-charset="utf-8">
                   <div class="form-group">
@@ -83,12 +91,13 @@
          -->
          
          <script>
+            // javascript code to copy privacy page
 function copy() {
   var copyText = document.getElementById("copy");
  var sho = document.getElementById("sho");
   copyText.select();
- //    copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
+ document.execCommand("copy");
+   //alert to tell copied the data
   alert("Copied your Privacy Policy");
 }
 </script>
